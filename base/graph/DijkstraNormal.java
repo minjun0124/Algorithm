@@ -3,7 +3,7 @@ package base.graph;
 public class DijkstraNormal {
 
 	public static void main(String[] args) {
-		DijkstraGraph g = new DijkstraGraph(8);
+		GraphDijkstra g = new GraphDijkstra(8);
 		g.input(1, 2, 3);
 		g.input(1, 5, 4);
 		g.input(1, 4, 4);
@@ -21,11 +21,11 @@ public class DijkstraNormal {
 
 }
 
-class DijkstraGraph {
+class GraphDijkstra {
 	private int n; // 노드들의 수
 	private int adj[][]; // 노드들간의 가중치 저장할 변수
 
-	public DijkstraGraph(int n) {
+	public GraphDijkstra(int n) {
 		this.n = n;
 		adj = new int[n + 1][n + 1];
 

@@ -8,7 +8,7 @@ import java.util.PriorityQueue;
 public class DijkstraPriorityQueue {
 
 	public static void main(String[] args) {
-		DijkstraGraphPQ g = new DijkstraGraphPQ(8);
+		GraphDijkstraPQ g = new GraphDijkstraPQ(8);
 		g.input(1, 2, 3);
 		g.input(1, 5, 4);
 		g.input(1, 4, 4);
@@ -25,12 +25,12 @@ public class DijkstraPriorityQueue {
 
 }
 
-class DijkstraGraphPQ {
+class GraphDijkstraPQ {
 	private int n; // 노드들의 수
 	// List<Edge>가 원소인 adj 배열 선언
-	private List<Edge> adj[];
+	private List<EdgeDijkstra> adj[];
 
-	public DijkstraGraphPQ(int n) {
+	public GraphDijkstraPQ(int n) {
 		this.n = n;
 		this.adj = new List[n + 1];
 		this.adjInit();
@@ -38,17 +38,17 @@ class DijkstraGraphPQ {
 
 	private void adjInit() {
 		for (int i = 1; i <= n; i++) {
-			this.adj[i] = new ArrayList<Edge>();
+			this.adj[i] = new ArrayList<EdgeDijkstra>();
 		}
 	}
 
 	// 무방향 간선
 	public void input(int u, int v, int w) {
-		this.adj[u].add(new Edge(v, w));
-		this.adj[v].add(new Edge(u, w));
+		this.adj[u].add(new EdgeDijkstra(v, w));
+		this.adj[v].add(new EdgeDijkstra(u, w));
 	}
 
-	public void dijkstra(int v) {
+	public void dijkstra(int start) {
 		int distance[] = new int[n + 1]; // 최단 거리를 저장할 변수
 		boolean[] visited = new boolean[n + 1]; // 해당 노드를 방문했는지 체크할 변수
 
@@ -56,21 +56,21 @@ class DijkstraGraphPQ {
 		Arrays.fill(distance, Integer.MAX_VALUE >> 1);
 
 		// 시작노드값 초기화.
-		distance[v] = 0;
+		distance[start] = 0;
 
-		PriorityQueue<Edge> pq = new PriorityQueue<>();
-		pq.offer(new Edge(v, 0));
+		PriorityQueue<EdgeDijkstra> pq = new PriorityQueue<>();
+		pq.offer(new EdgeDijkstra(start, 0));
 
 		while (!pq.isEmpty()) {
-			Edge curr = pq.poll();
+			EdgeDijkstra curr = pq.poll();
 			int d = curr.dest;
 
 			if (!visited[d]) {
 				visited[d] = true;
-				for (Edge next : adj[d]) {
+				for (EdgeDijkstra next : adj[d]) {
 					if (distance[next.dest] >= distance[d] + next.weight) {
 						distance[next.dest] = distance[d] + next.weight;
-						pq.offer(new Edge(next.dest, distance[next.dest]));
+						pq.offer(next);
 					}
 				}
 			}
@@ -85,11 +85,11 @@ class DijkstraGraphPQ {
 	}
 }
 
-class Edge implements Comparable<Edge> {
+class EdgeDijkstra implements Comparable<EdgeDijkstra> {
 	int dest;
 	int weight;
 
-	public Edge(int v, int w) {
+	public EdgeDijkstra(int v, int w) {
 		this.dest = v;
 		this.weight = w;
 	}
@@ -98,7 +98,7 @@ class Edge implements Comparable<Edge> {
 	// 따라서 기존(this)보다 큰 값이 들어왔을 때, 우선 순위를 올리고 싶다? -> return o - this (내림차순)
 	// 반대로 작은 값이 들어왔을 떄, 우선 순위를 올리고 싶다? -> return this - o (오름차순)
 	@Override
-	public int compareTo(Edge e) {
+	public int compareTo(EdgeDijkstra e) {
 		return this.weight - e.weight;
 	}
 }
