@@ -82,7 +82,6 @@ class DijkstraGraphPQ {
 			System.out.print(distance[i] + " ");
 		}
 		System.out.println("");
-
 	}
 }
 
