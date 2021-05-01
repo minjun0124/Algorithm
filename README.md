@@ -1,0 +1,2 @@
+# Algorithm
+Solved algorithm code
