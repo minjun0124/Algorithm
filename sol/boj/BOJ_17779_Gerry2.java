@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class BOJ_17779_gerry {
+public class BOJ_17779_Gerry2 {
 	static int N, Ans, x, y, d1, d2, sTotal;
 	static int map[][];
 	static int[] sumArr;
