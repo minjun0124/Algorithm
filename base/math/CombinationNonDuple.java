@@ -17,11 +17,11 @@ public class CombinationNonDuple {
 		r = 3;
 		c = 0;
 		rslt = new int[r];
-		combDupl(1, 0);
+		combNonDupl(1, 0);
 		System.out.println("total : " + c);
 	}
 
-	private static void combDupl(int start, int cnt) {
+	private static void combNonDupl(int start, int cnt) {
 		if (cnt == r) {
 			c++;
 			System.out.println(Arrays.toString(rslt));
@@ -30,7 +30,7 @@ public class CombinationNonDuple {
 
 		for (int i = start; i <= n; i++) {
 			rslt[cnt] = i;
-			combDupl(i + 1, cnt + 1);
+			combNonDupl(i + 1, cnt + 1);
 		}
 	}
 
