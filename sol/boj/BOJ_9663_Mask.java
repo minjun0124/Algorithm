@@ -1,4 +1,4 @@
-package baekJoon;
+package sol.boj;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -20,12 +20,12 @@ public class BOJ_9663_Mask {
 	}
 
 	private static void dfs(int r, int qNumbs) {
-		// ¸ðµç queen ¹èÄ¡ ¿Ï·á / ´ÙÀ½ ÄÉÀÌ½º¸¦ À§ÇØ return 
+		// ï¿½ï¿½ï¿½ queen ï¿½ï¿½Ä¡ ï¿½Ï·ï¿½ / ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ return 
 		if (qNumbs == N) {
 			ans++;
 			return;
 		}
-		// ¸ðµç Çà Å½»ö ¿Ï·á return
+		// ï¿½ï¿½ï¿½ ï¿½ï¿½ Å½ï¿½ï¿½ ï¿½Ï·ï¿½ return
 		if (r == N) {
 			return;
 		}
@@ -38,7 +38,7 @@ public class BOJ_9663_Mask {
 		}
 	}
 	
-	// ¹èÄ¡ °¡´É¼º °Ë»ç
+	// ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½É¼ï¿½ ï¿½Ë»ï¿½
 	private static boolean isPossible(int r, int c) {
 		if (map[r][c] == 0) {
 			return true;
@@ -47,14 +47,14 @@ public class BOJ_9663_Mask {
 	}
 
 	private static void set_queen(int r, int c) {
-		// QueenÀÇ °ø°Ý ¹üÀ§¸¦ ¸¶½ºÅ·
+		// Queenï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Å·
 		for (int i = 0; i < 4; i++) {
 			masking(r, c, dr[i], dc[i]);
 		}
 	}
 
 	private static void del_queen(int r, int c) {
-		// ¸¶½ºÅ· ÇØÁ¦
+		// ï¿½ï¿½ï¿½ï¿½Å· ï¿½ï¿½ï¿½ï¿½
 		for (int i = 0; i < 4; i++) {
 			demasking(r, c, dr[i], dc[i]);
 		}

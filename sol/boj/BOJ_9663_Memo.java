@@ -1,4 +1,4 @@
-package baekJoon;
+package sol.boj;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -21,7 +21,7 @@ public class BOJ_9663_Memo {
 	}
  
 	public static void dfs(int qNumbs) {
-		// ¸ðµç queen ¹èÄ¡ ¿Ï·á / ´ÙÀ½ ÄÉÀÌ½º¸¦ À§ÇØ return 
+		// ï¿½ï¿½ï¿½ queen ï¿½ï¿½Ä¡ ï¿½Ï·ï¿½ / ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ return 
 		if (qNumbs == N) {
 			ans++;
 			return;
@@ -29,7 +29,7 @@ public class BOJ_9663_Memo {
  
 		for (int i = 0; i < N; i++) {
 			memo[qNumbs] = i;
-			// ¹èÄ¡ÇÒ ¼ö ÀÖ´Ù¸é ¹èÄ¡ ÈÄ ´ÙÀ½ ¹èÄ¡¸¦ À§ÇØ Àç±Í
+			// ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´Ù¸ï¿½ ï¿½ï¿½Ä¡ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 			if (isPossible(qNumbs)) {
 				dfs(qNumbs + 1);
 			}
@@ -39,11 +39,11 @@ public class BOJ_9663_Memo {
  
 	public static boolean isPossible(int col) {
 		for (int i = 0; i < col; i++) {
-			// °°Àº Çà¿¡ Á¸ÀçÇÒ °æ¿ì 
+			// ï¿½ï¿½ï¿½ï¿½ ï¿½à¿¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ 
 			if (memo[col] == memo[i]) {
 				return false;
 			}
-			// ´ë°¢¼±¿¡ ³õ¿©ÀÖ´Â °æ¿ì
+			// ï¿½ë°¢ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½
 			else if (Math.abs(col - i) == Math.abs(memo[col] - memo[i])) {
 				return false;
 			}

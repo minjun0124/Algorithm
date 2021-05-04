@@ -1,4 +1,4 @@
-package baekJoon;
+package sol.boj;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -20,16 +20,16 @@ public class BOJ_9663_Norm {
 	}
 
 	private static void dfs(int row, int qNumbs) {
-		// ¸ðµç queen ¹èÄ¡ ¿Ï·á / ´ÙÀ½ ÄÉÀÌ½º¸¦ À§ÇØ return 
+		// ï¿½ï¿½ï¿½ queen ï¿½ï¿½Ä¡ ï¿½Ï·ï¿½ / ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ return 
 		if (qNumbs == N) {
 			ans++;
 			return;
 		}
-		// ¸ðµç Çà Å½»ö ¿Ï·á return
+		// ï¿½ï¿½ï¿½ ï¿½ï¿½ Å½ï¿½ï¿½ ï¿½Ï·ï¿½ return
 		if (row == N) {
 			return;
 		}
-		// rowÇà¿¡ ´ëÇÑ ¿­ °Ë»ç 
+		// rowï¿½à¿¡ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ë»ï¿½ 
 		for (int c = 0; c < N; c++) {
 			if (isPossible(row, c)) {
 				set_queen(row, c);
@@ -39,9 +39,9 @@ public class BOJ_9663_Norm {
 		}
 	}
 
-	// ¹èÄ¡ °¡´É¼º °Ë»ç
+	// ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½É¼ï¿½ ï¿½Ë»ï¿½
 	private static boolean isPossible(int r, int c) {
-		// À§Çù °¡´ÉÇÑ QueenÀÌ ¹èÄ¡µÇ¾î ÀÖ´ÂÁö ¹æÇâÀ» ¹Ù²ã°¡¸ç °Ë»ç
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Queenï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½Ç¾ï¿½ ï¿½Ö´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù²ã°¡ï¿½ï¿½ ï¿½Ë»ï¿½
 		for (int i = 0; i < 4; i++) {
 			if (checkInline(r, c, dr[i], dc[i])) {
 				return false;
