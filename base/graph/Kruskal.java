@@ -1,4 +1,4 @@
-package base.graph;
+package Algorithm.base.graph;
 
 import java.util.PriorityQueue;
 

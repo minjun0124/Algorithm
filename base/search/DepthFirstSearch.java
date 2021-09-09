@@ -1,4 +1,4 @@
-package base.search;
+package Algorithm.base.search;
 
 public class DepthFirstSearch {
 

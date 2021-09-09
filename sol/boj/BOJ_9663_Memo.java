@@ -1,4 +1,4 @@
-package sol.boj;
+package Algorithm.sol.boj;
 
 import java.io.BufferedReader;
 import java.io.IOException;

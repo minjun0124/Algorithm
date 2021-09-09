@@ -1,4 +1,4 @@
-package base.math;
+package Algorithm.base.math;
 
 import java.util.Arrays;
 

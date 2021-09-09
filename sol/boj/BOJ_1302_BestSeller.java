@@ -1,4 +1,4 @@
-package sol.boj;
+package Algorithm.sol.boj;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -23,6 +23,7 @@ public class BOJ_1302_BestSeller {
 
 	private static void sol() {
 		List<Entry<String, Integer>> entries = new ArrayList<Map.Entry<String,Integer>>(soldBook.entrySet());
+
 		Collections.sort(entries, new Comparator<Entry<String, Integer>>() {
 			@Override
 			public int compare(Entry<String, Integer> o1, Entry<String, Integer> o2) {

@@ -1,4 +1,4 @@
-package sol.pgmrs;
+package Algorithm.sol.pgmrs;
 
 import java.util.LinkedList;
 import java.util.PriorityQueue;

@@ -1,4 +1,4 @@
-package base.math;
+package Algorithm.base.math;
 
 public class DisjointSet {
 	static int[] parent = new int[11];

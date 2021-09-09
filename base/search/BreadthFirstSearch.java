@@ -1,4 +1,4 @@
-package base.search;
+package Algorithm.base.search;
 
 import java.util.LinkedList;
 import java.util.Queue;

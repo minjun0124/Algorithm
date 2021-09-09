@@ -1,4 +1,4 @@
-package sol.pgmrs;
+package Algorithm.sol.pgmrs;
 
 public class PGMRS_NormSquare {
 
