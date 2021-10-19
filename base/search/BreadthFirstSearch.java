@@ -15,7 +15,7 @@ public class BreadthFirstSearch {
 	}
 
 	private static void BFS(int v) {
-		Queue<Integer> q = new LinkedList<Integer>();
+		Queue<Integer> q = new LinkedList<>();
 		boolean[] check = new boolean[v + 1];
 		int curr, size;
 		check[v] = true;

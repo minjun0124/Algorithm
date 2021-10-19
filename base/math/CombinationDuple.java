@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * 
- * Combination with Repetition (nHr = n+r-1Cr)
+ * Combination with Repetition (nHr = (n+r-1)Cr)
  * 
  */
 public class CombinationDuple {
